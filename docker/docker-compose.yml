@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - '33060:3306'
+    environment:
+      - MYSQL_DATABASE=address_microservice
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    volumes:
+      - /var/lib/mysql
+
+  web:
+    build: .
+    restart: always
+    env_file:
+        - .env
+    command: python manage.py runserver 0.0.0.0:8000
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../src:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db

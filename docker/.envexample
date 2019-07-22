@@ -1,0 +1,8 @@
+DB_NAME=address_service
+HOST=db
+PORT=33060
+USERNAME=root
+PASSWORD=password
+MYSQL_ROOT_PASSWORD=password
+ENV=dev
+SECRET=ina3d4n%vls4@#*(4=vau@80*0@i$0yh8_y^=bujn8q0j$wfx0#xv1d
